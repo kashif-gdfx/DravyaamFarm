@@ -1,35 +1,13 @@
-export default function Location({
-  bgImage = "/src/assets/locationimage.jpg",
-}) {
+export default function Location({ bgImage = "/locationimage.jpg" }) {
   const points = [
-    {
-      title: "Jambudweep Temple",
-      dist: "100 meters",
-      img: "/src/assets/jumbudweep.jpg",
-    },
-    {
-      title: "Digamber Jain Bada Mandir",
-      dist: "150 meters",
-      img: "/src/assets/Digambarjain.jpg",
-    },
-    {
-      title: "Ashtapad Teerth",
-      dist: "150 meters",
-      img: "/src/assets/Asthapad.jpg",
-    },
-    {
-      title: "Kailash Parvat",
-      dist: "100 meters",
-      img: "/src/assets/Kailash.jpg",
-    },
-    {
-      title: "Chidayatan",
-      dist: "50 meters",
-      img: "/src/assets/Chidayatan.jpg",
-    },
-    { title: "Gaushala", dist: "1 km", img: "/src/assets/Gaushala.jpg" },
-    { title: "Karna Temple", dist: "2 km", img: "/src/assets/Karna.jpg" },
-    { title: "Local Market", dist: "500 meters", img: "/src/assets/Local.jpg" },
+    { title: "Jambudweep Temple", dist: "100 meters", img: "/jumbudweep.jpg" },
+    { title: "Digamber Jain Bada Mandir", dist: "150 meters", img: "/Digambarjain.jpg" },
+    { title: "Ashtapad Teerth", dist: "150 meters", img: "/Asthapad.jpg" },
+    { title: "Kailash Parvat", dist: "100 meters", img: "/Kailash.jpg" },
+    { title: "Chidayatan", dist: "50 meters", img: "/Chidayatan.jpg" },
+    { title: "Gaushala", dist: "1 km", img: "/Gaushala.jpg" },
+    { title: "Karna Temple", dist: "2 km", img: "/Karna.jpg" },
+    { title: "Local Market", dist: "500 meters", img: "/Local.jpg" },
   ];
 
   return (
@@ -47,41 +25,39 @@ export default function Location({
           Nearby Attractions
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* -------- LEFT SIDE POINT LIST -------- */}
-          <div className="space-y-5 text-white">
+        {/* 🔥 SAME HEIGHT COLUMNS USING GRID 🔥 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-stretch">
+          
+          {/* LEFT — make items fill full height with equal distribution */}
+          <div className="grid grid-rows-8 gap-4 md:gap-5 text-white">
             {points.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/10"
+                className="flex items-center justify-between bg-white/10 px-4 py-3 rounded-xl backdrop-blur-md border border-white/10"
               >
-                <span className="text-lg font-semibold">{p.title}</span>
-                <span className="text-amber-300 font-medium">{p.dist}</span>
+                <span className="text-sm md:text-base font-medium">{p.title}</span>
+                <span className="text-amber-300 font-semibold text-sm md:text-base">{p.dist}</span>
               </div>
             ))}
           </div>
 
-          {/* -------- RIGHT SIDE IMAGES GRID -------- */}
-          <div className="grid grid-cols-2 gap-5">
+          {/* RIGHT — image grid already correct */}
+          <div className="grid grid-cols-2 gap-4 md:gap-5">
             {points.map((p, i) => (
               <div
                 key={i}
-                className="bg-white/10 rounded-xl overflow-hidden border border-white/10 backdrop-blur-md p-2"
+                className="bg-white/10 rounded-xl overflow-hidden border border-white/10 p-2 backdrop-blur-md"
               >
-                <div className="w-full h-32 md:h-40 rounded-lg overflow-hidden">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="h-28 sm:h-32 md:h-36 lg:h-40 rounded-lg overflow-hidden">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
                 </div>
-
-                <span className="block text-center text-white text-sm md:text-base mt-2 font-medium">
+                <span className="block text-center text-white text-xs md:text-sm mt-2 font-medium">
                   {p.title}
                 </span>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

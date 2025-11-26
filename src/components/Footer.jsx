@@ -41,7 +41,7 @@ export default function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-4 text-lg text-gray-400">
-            <li className="hover:text-white transition cursor-pointer">Home</li>
+            <li  className="hover:text-white transition cursor-pointer">Home</li>
             <li className="hover:text-white transition cursor-pointer">
               About Us
             </li>

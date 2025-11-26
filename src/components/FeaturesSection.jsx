@@ -13,7 +13,7 @@ import React, { useState } from "react";
  */
 
 export default function FeaturesSection({
-  bgImage = "/src/assets/farmimage1.jpg",
+  bgImage = "/farmimage1.jpg",
   // if you want to disable thumbnails pass thumbnail={null}
   thumbnail = "/mnt/data/pic2.png",
 }) {
